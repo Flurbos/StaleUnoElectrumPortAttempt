@@ -1,37 +1,38 @@
 {
     "electrum1.unobtanium.uno": {
         "pruning": "-",
-        "s": "50002",
-        "t": "50001",
+        "s": "50006",
+        "t": "50005",
         "version": "1.1"
     },
     "electrum2.unobtanium.uno": {
         "pruning": "-",
-        "s": "50002",
-        "t": "50001",
+        "s": "50006",
+        "t": "50005",
         "version": "1.1"
     },
     "node1.unobtanium.uno": {
         "pruning": "-",
-        "s": "50002",
-        "t": "50001",
+        "s": "50006",
+        "t": "50005",
         "version": "1.1"
     },
     "node2.unobtanium.uno": {
         "pruning": "-",
-        "s": "50002",
-        "t": "50001",
+        "s": "50006",
+        "t": "50005",
         "version": "1.1"
     },
     "nigeria1.unobtanium.uno": {
         "pruning": "-",
-        "s": "50002",
-        "t": "50001",
+        "s": "50006",
+        "t": "50005",
         "version": "1.1"
     },
     "nigeria2.unobtanium.uno": {
         "pruning": "-",
-        "s": "995",
+        "s": "50006",
+        "t": "50005",
         "version": "1.1"
     }
 }
