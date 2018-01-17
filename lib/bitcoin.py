@@ -77,7 +77,7 @@ class NetworkConstants:
         cls.WIF_PREFIX = 0xE0
         cls.ADDRTYPE_P2PKH = 130
         cls.ADDRTYPE_P2SH = 0x1E
-        #cls.SEGWIT_HRP = "bc" #Unobtanium shouldn't need this till later
+        cls.SEGWIT_HRP = "un" #Unobtanium should change this later
         cls.GENESIS = "000004c2fc5fffb810dccc197d603690099a68305232e552d96ccbe8e2c52b75"
         cls.DEFAULT_PORTS = {'t': '50001', 's': '50002'}
         cls.DEFAULT_SERVERS = read_json('servers.json', {})
@@ -89,7 +89,7 @@ class NetworkConstants:
         cls.WIF_PREFIX = 0xef
         cls.ADDRTYPE_P2PKH = 0x44
         cls.ADDRTYPE_P2SH = 0x1E
-        #cls.SEGWIT_HRP = "tb" #Once again shouldn't need yet..
+        cls.SEGWIT_HRP = "tu" #Maybe change when segwit added
         cls.GENESIS = "000004aa8e535bedb2186a3c1c2f3b119e70c2f61286b15ec98a81021c3a4a0c"
         cls.DEFAULT_PORTS = {'t':'51001', 's':'51002'}
         cls.DEFAULT_SERVERS = read_json('servers_testnet.json', {})
