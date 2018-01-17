@@ -74,11 +74,11 @@ class NetworkConstants:
     @classmethod
     def set_mainnet(cls):
         cls.TESTNET = False
-        cls.WIF_PREFIX = 0x80
-        cls.ADDRTYPE_P2PKH = 0
-        cls.ADDRTYPE_P2SH = 5
-        cls.SEGWIT_HRP = "bc"
-        cls.GENESIS = "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+        cls.WIF_PREFIX = 0xE0
+        cls.ADDRTYPE_P2PKH = 130
+        cls.ADDRTYPE_P2SH = 0x1E
+        #cls.SEGWIT_HRP = "bc" #Unobtanium shouldn't need this till later
+        cls.GENESIS = "000004c2fc5fffb810dccc197d603690099a68305232e552d96ccbe8e2c52b75"
         cls.DEFAULT_PORTS = {'t': '50001', 's': '50002'}
         cls.DEFAULT_SERVERS = read_json('servers.json', {})
         cls.CHECKPOINTS = read_json('checkpoints.json', [])
@@ -87,10 +87,10 @@ class NetworkConstants:
     def set_testnet(cls):
         cls.TESTNET = True
         cls.WIF_PREFIX = 0xef
-        cls.ADDRTYPE_P2PKH = 111
-        cls.ADDRTYPE_P2SH = 196
-        cls.SEGWIT_HRP = "tb"
-        cls.GENESIS = "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"
+        cls.ADDRTYPE_P2PKH = 0x44
+        cls.ADDRTYPE_P2SH = 0x1E
+        #cls.SEGWIT_HRP = "tb" #Once again shouldn't need yet..
+        cls.GENESIS = "000004aa8e535bedb2186a3c1c2f3b119e70c2f61286b15ec98a81021c3a4a0c"
         cls.DEFAULT_PORTS = {'t':'51001', 's':'51002'}
         cls.DEFAULT_SERVERS = read_json('servers_testnet.json', {})
         cls.CHECKPOINTS = read_json('checkpoints_testnet.json', [])
@@ -99,6 +99,8 @@ class NetworkConstants:
 NetworkConstants.set_mainnet()
 
 ################################## transactions
+
+#probably need to change - BadchoicesZ
 
 FEE_STEP = 10000
 MAX_FEE_RATE = 300000
@@ -353,6 +355,9 @@ def public_key_to_p2wpkh(public_key):
 
 def script_to_p2wsh(script):
     return hash_to_segwit_addr(sha256(bfh(script)))
+
+
+#BadChoicesZ might need to change.
 
 def p2wpkh_nested_script(pubkey):
     pkh = bh2u(hash_160(bfh(pubkey)))
@@ -619,7 +624,7 @@ from ecdsa.util import string_to_number, number_to_string
 
 def msg_magic(message):
     length = bfh(var_int(len(message)))
-    return b"\x18Bitcoin Signed Message:\n" + length + message
+    return b"\x1bUnobtanium Signed Message:\n" + length + message
 
 
 def verify_message(address, sig, message):
@@ -961,7 +966,7 @@ def xpub_from_xprv(xprv):
 
 
 def bip32_root(seed, xtype):
-    I = hmac.new(b"Bitcoin seed", seed, hashlib.sha512).digest()
+    I = hmac.new(b"Unobtanium seed", seed, hashlib.sha512).digest()
     master_k = I[0:32]
     master_c = I[32:]
     K, cK = get_pubkeys_from_secret(master_k)
