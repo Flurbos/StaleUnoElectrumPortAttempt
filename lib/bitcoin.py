@@ -79,7 +79,7 @@ class NetworkConstants:
         cls.ADDRTYPE_P2SH = 0x1E
         cls.SEGWIT_HRP = "un" #Unobtanium should change this later
         cls.GENESIS = "000004c2fc5fffb810dccc197d603690099a68305232e552d96ccbe8e2c52b75"
-        cls.DEFAULT_PORTS = {'t': '50001', 's': '50002'}
+        cls.DEFAULT_PORTS = {'t': '50005', 's': '50006'}
         cls.DEFAULT_SERVERS = read_json('servers.json', {})
         cls.CHECKPOINTS = read_json('checkpoints.json', [])
 
@@ -91,7 +91,7 @@ class NetworkConstants:
         cls.ADDRTYPE_P2SH = 0x1E
         cls.SEGWIT_HRP = "tu" #Maybe change when segwit added
         cls.GENESIS = "000004aa8e535bedb2186a3c1c2f3b119e70c2f61286b15ec98a81021c3a4a0c"
-        cls.DEFAULT_PORTS = {'t':'51001', 's':'51002'}
+        cls.DEFAULT_PORTS = {'t':'51005', 's':'51006'}
         cls.DEFAULT_SERVERS = read_json('servers_testnet.json', {})
         cls.CHECKPOINTS = read_json('checkpoints_testnet.json', [])
 
